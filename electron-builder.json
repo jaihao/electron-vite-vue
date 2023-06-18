@@ -1,0 +1,44 @@
+{
+  "appId": "com.electron.app",
+  "productName": "electron-vite-vue",
+  "asar": true,
+  "icon": "public/favicon.ico",
+  "copyright": "Copyright © year ${author}",
+  "directories": {
+    // 打包后文件夹目录
+    "output": "dist_electron/"
+  },
+  // 设置打包的内容，包含必要的项目代码文件
+  "files": [
+    "dist",
+    "electron"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ]
+  },
+  "nsis": {
+    // 是否一键安装
+    "oneClick": false,
+    // 是否开启安装时权限限制（此电脑或当前用户）
+    "perMachine": true,
+    // 允许请求提升。 如果为 false，则用户必须使用提升的权限重新启动安装程序。
+    "allowElevation": true,
+    // 允许修改安装目录
+    "allowToChangeInstallationDirectory": true,
+    // 安装图标
+    "installerIcon": "public/favicon.ico",
+    // 卸载图标
+    "uninstallerIcon": "public/favicon.ico",
+    // 安装时头部图标
+    "installerHeaderIcon": "public/favicon.ico",
+    // 创建桌面图标
+    "createDesktopShortcut": true,
+    // 创建开始菜单图标
+    "createStartMenuShortcut": false
+  }
+}
